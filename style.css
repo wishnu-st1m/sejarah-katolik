@@ -1,0 +1,319 @@
+/* PALET WARNA */
+:root {
+    --warna-krem: #F5F5DC; /* Krem (Latar Belakang Utama) */
+    --warna-putih: #FFFFFF; /* Putih Bersih */
+    --warna-coklat-tua: #4E342E; /* Coklat Tua (Teks/Header) */
+    --warna-coklat-sedang: #795548; /* Coklat Sedang (Aksen/Tombol) */
+    --warna-emas-pudar: #B8860B; /* Emas Pudar (Aksen sekunder) */
+}
+
+/* RESET DASAR DAN FONT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--warna-coklat-tua);
+    line-height: 1.6;
+    
+    /* PENGATURAN LATAR BELAKANG GAMBAR BARU */
+    background-image: url('latar-katolik.jpg.png'); /* GANTI DENGAN NAMA FILE GAMBAR ANDA */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Membuat gambar tetap saat halaman digulir (scrolling) */
+    background-size: cover; /* Memastikan gambar menutupi seluruh layar tanpa terdistorsi */
+    background-color: var(--warna-krem); /* Warna cadangan jika gambar gagal dimuat */
+}
+    
+h1, h2, h3 {
+    font-family: 'Merriweather', serif; /* Font klasik untuk judul */
+    color: var(--warna-coklat-tua);
+    margin-bottom: 15px;
+}
+
+/* HEADER & NAVIGASI */
+header {
+    background-color: var(--warna-coklat-tua);
+    color: var(--warna-krem);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--warna-krem);
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: var(--warna-coklat-sedang);
+    border-radius: 4px;
+}
+
+/* BAGIAN HERO (BERANDA) */
+.hero {
+    background: url('path/to/your/imag.jpg') no-repeat center center/cover; /* Ganti dengan gambar gereja/simbol */
+    background-color: #8D6E63; /* Coklat background jika gambar belum ada */
+    color: var(--warna-putih);
+    text-align: center;
+    padding: 100px 20px;
+    height: 60vh; /* Tinggi visual */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    background-color: rgba(78, 52, 46, 0.7); /* Overlay coklat transparan */
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    color: var(--warna-putih);
+    font-size: 2.5em;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--warna-emas-pudar);
+    color: var(--warna-coklat-tua);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #A08000;
+}
+
+/* BAGIAN KONTEN UMUM */
+.content-section {
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.light-bg {
+    background-color: var(--warna-putih);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* GARIS WAKTU */
+.timeline-item {
+    background-color: var(--warna-putih);
+    border-left: 5px solid var(--warna-coklat-sedang);
+    margin: 20px auto;
+    padding: 20px;
+    text-align: left;
+    max-width: 800px;
+    border-radius: 5px;
+}
+
+.timeline-item h3 {
+    color: var(--warna-coklat-sedang);
+    margin-top: 0;
+}
+
+/* KARTU TOKOH */
+.tokoh-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.tokoh-card {
+    background-color: var(--warna-krem);
+    border: 1px solid var(--warna-coklat-sedang);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    /* ======================================================= */
+/* EFEK HOVER KHUSUS UNTUK KARTU TOKOH */
+/* ======================================================= */
+
+/* Menggunakan .timeline-link yang membungkus kartu tokoh */
+.tokoh-grid .timeline-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 250px; /* Lebar kartu diatur di link */
+    margin: 10px; /* Jarak antar kartu */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk animasi mulus */
+}
+
+/* Efek saat kursor diarahkan (hover) pada link kartu */
+.tokoh-grid .timeline-link:hover {
+    transform: translateY(-5px); /* Geser 5px ke atas */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Bayangan lebih tebal dan gelap (tema Moody) */
+    cursor: pointer;
+}
+
+/* Memastikan kartu itu sendiri terlihat bersih */
+.tokoh-card {
+    /* ... kode warna dan layout yang sudah ada ... */
+    height: 100%; /* Agar kartu menyesuaikan tinggi link */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PENGATURAN RESPONSIF (Pastikan ini ada di bagian @media (max-width: 600px)) */
+@media (max-width: 600px) {
+    /* ... kode responsif lainnya ... */
+    
+    .tokoh-grid .timeline-link {
+        width: 100%; /* Mengisi lebar penuh di ponsel */
+        max-width: 300px; /* Batas maksimum agar tidak terlalu lebar */
+    }
+    
+    /* ... kode responsif lainnya ... */
+}
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--warna-coklat-tua);
+    color: var(--warna-krem);
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* --- Tambahan untuk Item yang Bisa Diklik --- */
+
+/* Menghilangkan dekorasi pada link yang membungkus item timeline */
+.timeline-link {
+    text-decoration: none; /* Menghilangkan garis bawah link */
+    color: inherit; /* Memastikan warna teks diwarisi dari body/parent */
+    display: block; /* Memastikan link menempati seluruh lebar item */
+    margin: 20px auto; /* Menggantikan margin yang ada pada timeline-item lama */
+    max-width: 800px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transisi untuk efek halus */
+}
+
+/* Mengatur ulang gaya timeline-item agar cocok di dalam link */
+.timeline-item {
+    background-color: var(--warna-putih);
+    border-left: 5px solid var(--warna-coklat-sedang);
+    /* margin: 20px auto; <-- Hapus baris ini dari CSS lama karena sudah diatur di .timeline-link */
+    padding: 20px;
+    text-align: left;
+    /* max-width: 800px; <-- Hapus baris ini dari CSS lama karena sudah diatur di .timeline-link */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan ringan */
+}
+
+/* Efek saat kursor diarahkan (hover) */
+.timeline-link:hover {
+    transform: translateY(-3px); /* Menggeser sedikit ke atas */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Bayangan lebih tebal */
+    cursor: pointer;
+}
+
+.timeline-link:hover .timeline-item {
+    border-left-color: var(--warna-emas-pudar); /* Mengubah warna aksen saat hover */
+}
+
+/* CONTOH PENGATURAN UNTUK MEMPERJELAS TEKS */
+.content-section {
+    padding: 40px 5%;
+    text-align: center;
+    background-color: rgba(245, 245, 220, 0.9); /* Krem dengan transparansi 90% */
+    margin: 40px auto;
+    max-width: 1000px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tambahkan sedikit bayangan */
+}
+
+/* Pastikan section light-bg juga dimodifikasi jika perlu */
+.light-bg {
+    background-color: rgba(255, 255, 255, 0.9); /* Putih dengan transparansi 90% */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ======================================================= */
+/* 4. MEDIA QUERIES (RESPONSIVITAS) */
+/* ======================================================= */
+
+/* Untuk Layar Kecil (Ponsel - Lebar maksimum 600px) */
+@media (max-width: 600px) {
+    
+    /* 1. HEADER: Pindahkan Navigasi ke bawah Logo */
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 10px; /* Tambahkan ruang di bawah logo */
+    }
+
+    nav ul {
+        flex-direction: column; /* Link navigasi disusun vertikal */
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li a {
+        display: block; /* Membuat setiap link mengambil seluruh lebar */
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* 2. JUDUL: Perkecil Ukuran Font Judul Utama */
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    /* 3. PADDING/MARGIN: Kurangi Padding Konten */
+    .content-section {
+        padding: 20px 3%; /* Kurangi padding samping */
+        margin: 20px auto; /* Kurangi margin atas/bawah */
+    }
+
+    /* 4. GARIS WAKTU: Pastikan Garis Waktu Tetap Terpusat */
+    .timeline-link {
+        margin: 10px auto; /* Kurangi margin item timeline */
+        max-width: 95%;
+    }
+    
+    /* 5. KARTU TOKOH: Kartu akan mengisi seluruh lebar layar */
+    .tokoh-grid {
+        gap: 10px;
+    }
+    .tokoh-card {
+        width: 100%; /* Memaksa kartu mengambil seluruh lebar (atau 90% jika Anda mau) */
+    }
+}
+
+/* Untuk Layar Sedang (Tablet - Lebar maksimum 900px) */
+@media (max-width: 900px) {
+    .content-section {
+        max-width: 95%; /* Konten mengisi sebagian besar layar tablet */
+    }
+
+    /* Memastikan tata letak hero tetap baik di tablet */
+    .hero {
+        height: 40vh;
+    }
+}
